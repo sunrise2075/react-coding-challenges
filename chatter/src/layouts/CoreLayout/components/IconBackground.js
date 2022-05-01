@@ -16,7 +16,7 @@ function getRandomIcon() {
 function IconRow({ numberOfIcons }) {
   return (
     <div className="icon-background__row">
-      {[...new Array(numberOfIcons)].map(() => {
+      {[...new Array(numberOfIcons)].map((value, index, array) => {
         const icon = getRandomIcon();
 
         return (

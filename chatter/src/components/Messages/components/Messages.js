@@ -11,7 +11,9 @@ import '../styles/_messages.scss';
 
 const socket = io(
   config.BOT_SERVER_ENDPOINT,
-  { transports: ['websocket', 'polling', 'flashsocket'] }
+  {
+      transports: ['websocket', 'polling', 'flashsocket']
+  }
 );
 
 function Messages() {
@@ -20,12 +22,12 @@ function Messages() {
   const { setLatestMessage } = useContext(LatestMessagesContext);
 
   return (
-    <div className="messages">
-      <Header />
-      <div className="messages__list" id="message-list">
-      </div>
-      <Footer message={message} sendMessage={sendMessage} onChangeMessage={onChangeMessage} />
-    </div>
+          <div className="messages">
+              <Header />
+              <div className="messages__list" id="message-list">
+              </div>
+              {/*<Footer message={message} sendMessage={playSend} onChangeMessage={setLatestMessage} />*/}
+          </div>
   );
 }
 
